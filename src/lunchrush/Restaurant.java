@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -37,6 +38,11 @@ public class Restaurant extends JFrame {
         
         JButton btnWaitres;
         JButton btnTable;
+         
+        JButton btnTable1;
+        JButton btnTable2;
+        JButton btnTable3;
+        JButton btnTable4;
         
     //Constructor
     public Restaurant() {
@@ -55,7 +61,6 @@ public class Restaurant extends JFrame {
         pMenu = new JPanel();
         pMenu.setSize(800, 600);
         pMenu.setLayout(null);
-        pMenu.repaint();
 
         btnStart = new JButton("Start");
         btnStart.setLocation(325, 200);
@@ -66,6 +71,7 @@ public class Restaurant extends JFrame {
                 pMenu.setVisible(false);
                 pHighScore.setVisible(false);
                 pLvlOne.setVisible(true);
+                
             }
         });
 
@@ -118,19 +124,29 @@ public class Restaurant extends JFrame {
     pLvlOne = new JPanel();
     pLvlOne.setSize(800,600);
     pLvlOne.setLayout(null);
-    pLvlOne.repaint();
+    pLvlOne.setVisible(false);
     
-    //iconTable = new ImageIcon("../images/table.png");
-    iconTable = new ImageIcon("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\LunchRush\\src\\images\\table2.png");
-    imgTable = new Imagen("../images/table.png");
+    iconTable = new ImageIcon(getClass().getResource("../images/table2.png"));
     
     btnWaitres = new JButton();
     
-    btnTable = new JButton(iconTable);
-    btnTable.setLocation(250,300);
-    btnTable.setSize(150,91);
-    btnTable.setBackground(new Color(0, 0, 0, 0));
-    //btnTable.add(imgTable);
+    btnTable1 = new JButton(iconTable);
+    btnTable1.setSize(180, 91);
+    btnTable1.setLocation(250, 250);
+    btnTable1.setBackground(new Color(0, 0, 0, 0));
+    
+    btnTable2 = new JButton(iconTable);
+    btnTable2.setSize(180, 91);
+    btnTable2.setLocation(500, 400);
+    
+    btnTable3 = new JButton(iconTable);
+    btnTable3.setSize(180, 91);
+    btnTable3.setLocation(250, 400);
+    
+    btnTable4 = new JButton(iconTable);
+    btnTable4.setSize(180, 91);
+    btnTable4.setLocation(500, 250);
+
 
 ////////////////////////////////////////////////////////////////////////////////
         pMenu.add(btnStart);
@@ -144,7 +160,10 @@ public class Restaurant extends JFrame {
         
         
         pLvlOne.add(btnRegresar);
-        pLvlOne.add(btnTable);
+        pLvlOne.add(btnTable1);
+        pLvlOne.add(btnTable2);
+        pLvlOne.add(btnTable3);
+        pLvlOne.add(btnTable4);
         pLvlOne.add(imgRestaurant);
         
         this.add(pMenu);
