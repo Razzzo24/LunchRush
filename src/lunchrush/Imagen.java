@@ -5,6 +5,8 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+//Comment from github
+
 public class Imagen extends JPanel{
     private String img;
 
