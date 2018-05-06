@@ -6,8 +6,4 @@ public class LunchRush {
         Restaurant r = new Restaurant();
     }
     
-    //CambioSS
-    
-    //asdasdasd
-    
 }

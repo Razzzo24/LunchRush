@@ -12,17 +12,17 @@ import javax.swing.JPanel;
 
 public class Restaurant extends JFrame {
     
-        Imagen inicio;
-        Imagen scores;
+        Imagen imgInicio;
+        Imagen imgScores;
         
-        JPanel menu;
-        JPanel highScore;
+        JPanel pMenu;
+        JPanel pHighScore;
         
-        JButton start;
-        JButton controls;
-        JButton hScores;
-        JButton salir;
-        JButton regresar;
+        JButton btnStart;
+        JButton btnControls;
+        JButton btnHScores;
+        JButton btnSalir;
+        JButton btnRegresar;
         
     public Restaurant() {
         this.setTitle("Lunch & Rush");
@@ -35,35 +35,35 @@ public class Restaurant extends JFrame {
 
     public void GUI() {
 ////////////////////////////////////////////////////////////////////////////////
-        inicio = new Imagen("fondo.jpg");
-        menu = new JPanel();
-        menu.setSize(800, 600);
-        menu.setLayout(null);
-        menu.repaint();
+        imgInicio = new Imagen("../images/fondo.jpg");
+        pMenu = new JPanel();
+        pMenu.setSize(800, 600);
+        pMenu.setLayout(null);
+        pMenu.repaint();
 
-        start = new JButton("Start");
-        start.setLocation(325, 200);
-        start.setSize(120, 30);
+        btnStart = new JButton("Start");
+        btnStart.setLocation(325, 200);
+        btnStart.setSize(120, 30);
 
-        controls = new JButton("How to play");
-        controls.setLocation(325, 260);
-        controls.setSize(120, 30);
+        btnControls = new JButton("How to play");
+        btnControls.setLocation(325, 260);
+        btnControls.setSize(120, 30);
 
-        hScores = new JButton("High Scores");
-        hScores.setLocation(325, 320);
-        hScores.setSize(120, 30);
-        hScores.addActionListener(new ActionListener(){
+        btnHScores = new JButton("High Scores");
+        btnHScores.setLocation(325, 320);
+        btnHScores.setSize(120, 30);
+        btnHScores.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                menu.setVisible(false);
-                highScore.setVisible(true);
+                pMenu.setVisible(false);
+                pHighScore.setVisible(true);
             }
         });
         
-        salir = new JButton("Salir");
-        salir.setLocation(325,380);
-        salir.setSize(120,30);
-        salir.addActionListener(new ActionListener(){
+        btnSalir = new JButton("Salir");
+        btnSalir.setLocation(325,380);
+        btnSalir.setSize(120,30);
+        btnSalir.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 System.exit(0);
@@ -71,68 +71,38 @@ public class Restaurant extends JFrame {
         });
         
 ////////////////////////////////////////////////////////////////////////////////
-        scores = new Imagen("high_scores.jpg");
-        highScore = new JPanel();
-        highScore.setSize(800,600);
-        highScore.setLayout(null);
-        highScore.repaint();
+        imgScores = new Imagen("../images/high_scores.jpg");
+        pHighScore = new JPanel();
+        pHighScore.setSize(800,600);
+        pHighScore.setLayout(null);
+        pHighScore.repaint();
         
         
-        regresar = new JButton("Regresar");
-        regresar.setLocation(50,500);
-        regresar.setSize(120,30);
-        regresar.addActionListener(new ActionListener(){
+        btnRegresar = new JButton("Regresar");
+        btnRegresar.setLocation(50,500);
+        btnRegresar.setSize(120,30);
+        btnRegresar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                menu.setVisible(true);
-                highScore.setVisible(false);
+                pMenu.setVisible(true);
+                pHighScore.setVisible(false);
             }
         });
 ////////////////////////////////////////////////////////////////////////////////
                
-        menu.add(start);
-        menu.add(controls);
-        menu.add(hScores);
-        menu.add(salir);
-        menu.add(inicio);
+        pMenu.add(btnStart);
+        pMenu.add(btnControls);
+        pMenu.add(btnHScores);
+        pMenu.add(btnSalir);
+        pMenu.add(imgInicio);
         
-        highScore.add(regresar);
-        highScore.add(scores);
+        pHighScore.add(btnRegresar);
+        pHighScore.add(imgScores);
         
-        this.add(menu);
-        this.add(highScore);
+        this.add(pMenu);
+        this.add(pHighScore);
         
         this.setVisible(true);
     }
 
-    public class Imagen extends javax.swing.JPanel {
-        private String img;
-
-        public String getImg() {
-            return img;
-        }
-
-        public void setImg(String img) {
-            this.img = img;
-        }
-        
-        public Imagen(String img) {
-            this.setSize(800, 600); //se selecciona el tamaño del panel
-            this.img = img;
-        }
-
-        //Se crea un método cuyo parámetro debe ser un objeto Graphics
-        public void paint(Graphics grafico) {
-            Dimension height = getSize();
-
-        //Se selecciona la imagen que tenemos en el paquete de la //ruta del programa
-            ImageIcon Img = new ImageIcon(getClass().getResource(getImg()));
-
-        //se dibuja la imagen que tenemos en el paquete Images //dentro de un panel
-            grafico.drawImage(Img.getImage(), 0, 0, height.width, height.height, null);
-
-            setOpaque(false);
-            super.paintComponent(grafico);
-        }
-    }
 }
