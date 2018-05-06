@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Restaurant extends JFrame {
+    //So, this is the first change, lets commmit
         Imagen inicio;
         Imagen scores;
         
